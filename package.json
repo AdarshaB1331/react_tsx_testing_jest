@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "jest",
-    "test:cov": "jest --coverage --watchAll"
+    "test:cov": "jest --coverage --watchAll  --collectCoverageFrom='src/components/**/*.{ts,tsx}' --collectCoverageFrom='!src/components/**/*.{types, stories, constants, test, spec}. {ts, tsx}'"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -74,6 +74,14 @@
           "tsconfig": "tsconfig.app.json"
         }
       ]
+    },
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": -10
+      }
     }
   }
 }
